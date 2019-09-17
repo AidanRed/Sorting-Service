@@ -1,4 +1,4 @@
-from slack import RTMClient
+from slack_bot import bot
 
 if __name__ == "__main__":
-    pass
+    bot.run()

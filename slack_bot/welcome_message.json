@@ -1,0 +1,26 @@
+[
+	{
+		"type": "section",
+		"text": {
+			"type": "mrkdwn",
+			"text": "I'm your Sorting Service. I will sort numbers for you."
+		}
+	},
+	{
+		"type": "section",
+		"text": {
+			"type": "mrkdwn",
+			"text": "*Use the `sort:` command*. Type `sort:` followed by a list of numbers (delineated by spaces or commas)"
+		}
+	},
+	{
+		"type": "section",
+		"text": {
+			"type": "mrkdwn",
+			"text": "*Use the `generate:` command* Type `generate:` to generate a list of ten random numbers and then sort them."
+		}
+	},
+	{
+		"type": "divider"
+	}
+]
