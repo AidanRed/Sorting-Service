@@ -1,6 +1,8 @@
 **/.gitignore
 **/.git
 **/.DS_STORE
+**/.pytest_cache
+**/__pycache__
 LICENSE
 *.md
 !README*.md
