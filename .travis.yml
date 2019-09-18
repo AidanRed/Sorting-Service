@@ -1,0 +1,12 @@
+language: python
+
+services:
+  - docker
+
+before_install:
+  - docker build -t aidanred/sorting_service
+  - docker run -d -p 127.0.0.1:80:4567 aidanred/sorting_service
+  - docker run aidanred/sorting_service /bin/sh -c "cd /app; python test_runner.py"
+
+script:
+  - pytest
