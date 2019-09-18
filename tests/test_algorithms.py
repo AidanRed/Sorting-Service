@@ -1,6 +1,6 @@
 import pytest
 import os
-from algorithms import insertion_sort
+from algorithms import insertion_sort, bubble_sort
 
 # Create fixture to load test data only once for module
 @pytest.fixture(scope="module")
@@ -34,3 +34,7 @@ def get_testdata():
 def test_insertion_sort(get_testdata):
     for case in get_testdata:
         assert insertion_sort.sort(case) == sorted(case)
+
+def test_bubble_sort(get_testdata):
+    for case in get_testdata:
+        assert bubble_sort.sort(case) == sorted(case)
