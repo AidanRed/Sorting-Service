@@ -4,7 +4,9 @@ import ssl as ssl_lib
 import certifi
 import random
 import os
+import configparser
 from algorithms import insertion_sort
+
 
 class Bot(object):
     timestamp = ""
@@ -58,7 +60,20 @@ class Bot(object):
 
 def run():
     ssl_context = ssl_lib.create_default_context(cafile=certifi.where())
-    slack_token = "***REMOVED***"
+    
+    if not os.path.exists("config.cfg"):
+        with open("config.cfg", "w") as c:
+            c.write("[Bot]\nbot_slack_token =")
+
+    config = configparser.ConfigParser()
+    config.read("config.cfg")
+    try:
+        slack_token = config["Bot"]["bot_slack_token"]
+    
+    except KeyError:
+        print("Error: no bot_slack_token in config.cfg.")
+        return -1
+
     rtm_client = slack.RTMClient(token=slack_token, ssl=ssl_context)
-    print("Created client.")
+    print("Created bot.")
     rtm_client.start()
